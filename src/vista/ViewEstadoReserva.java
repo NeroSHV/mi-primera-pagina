@@ -1,19 +1,21 @@
 package vista;
 
+import interfaces.IMostrarMensaje;
 import modelo.EstadoReserva;
+
 import java.util.List;
 
-public class ViewEstadoReserva {
-
-    public void mostrarMensaje(String mensaje) {
-        System.out.println(mensaje);
+public class ViewEstadoReserva implements IMostrarMensaje {
+    public void displayListEstadoReservas(List<EstadoReserva> estados) {
+        System.out.println(" == Lista de Estados de Reserva == ");
+        for (EstadoReserva estado : estados) {
+            System.out.println("Id: " + estado.getId() + ", Descripción: " + estado.getDescripcion());
+        }
     }
 
-    public void displayListEstadoReservas(List<EstadoReserva> estados) {
-        System.out.println("\n== Estados de Reservas ==");
-        for (EstadoReserva estado : estados) {
-            System.out.println("ID: " + estado.getId() +
-                               ", Estado: " + estado.getEstado());
-        }
+    @Override
+    public void mostrarMensaje(String mensaje) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarMensaje'");
     }
 }

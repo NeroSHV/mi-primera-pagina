@@ -2,25 +2,23 @@ package controlador;
 
 import modelo.TipoTercero;
 import vista.ViewTipoTercero;
+
 import java.util.List;
 
 public class TipoTerceroController {
     private ViewTipoTercero view;
 
-    // Constructor
     public TipoTerceroController(ViewTipoTercero view) {
         this.view = view;
     }
 
-    // Insertar un nuevo tipo de tercero
-    public void insertNewTipoTercero(TipoTercero tipoTercero) {
-        TipoTercero.insertTipoTercero(tipoTercero);
-        System.out.println("Nuevo tipo de tercero agregado: " + tipoTercero.getId());
+    public void insertNewTipoTercero(TipoTercero newTipoTercero) {
+        TipoTercero.insertTipoTercero(newTipoTercero);
+        view.mostrarMensaje("\nTipo de Tercero guardado correctamente!");
     }
 
-    // Mostrar todos los tipos de tercero en la vista
     public void displayAllTipoTerceros() {
-        List<TipoTercero> tipos = TipoTercero.getAllTipoTerceros();
-        view.displayListTipoTerceros(tipos);
+        List<TipoTercero> tipoTerceros = TipoTercero.getAllTipoTerceros();
+        view.displayListTipoTerceros(tipoTerceros);
     }
 }

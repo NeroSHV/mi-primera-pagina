@@ -1,5 +1,12 @@
 package modelo;
 
+import db.connection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Municipio {
@@ -11,21 +18,46 @@ public class Municipio {
         this.nombre = nombre;
     }
 
-    public int getId() { return id; }
-    public String getNombre() { return nombre; }
+    public int getId() {
+        return id;
+    }
 
-    @Override
-    public String toString() {
-        return "Municipio [ID: " + id + ", Nombre: " + nombre + "]";
+    public String getNombre() {
+        return nombre;
     }
 
     public static void insertMunicipio(Municipio municipio) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insertMunicipio'");
+        Connection con = connection.getConnection();
+
+        String sql = "INSERT INTO municipio (id, nombre) VALUES (?, ?)";
+
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+            statement.setInt(1, municipio.getId());
+            statement.setString(2, municipio.getNombre());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static List<Municipio> getAllMunicipios() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllMunicipios'");
+        Connection con = connection.getConnection();
+        List<Municipio> municipios = new ArrayList<>();
+
+        String sql = "SELECT * FROM municipio";
+
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Municipio municipio = new Municipio(
+                        rs.getInt("id"),
+                        rs.getString("nombre")
+                );
+                municipios.add(municipio);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return municipios;
     }
 }

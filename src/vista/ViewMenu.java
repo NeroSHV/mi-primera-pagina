@@ -1,19 +1,21 @@
 package vista;
 
+import interfaces.IMostrarMensaje;
 import modelo.Menu;
+
 import java.util.List;
 
-public class ViewMenu {
-
-    public void mostrarMensaje(String mensaje) {
-        System.out.println(mensaje);
+public class ViewMenu implements IMostrarMensaje {
+    public void displayListMenus(List<Menu> menus) {
+        System.out.println(" == Lista de Menús == ");
+        for (Menu menu : menus) {
+            System.out.println("Id: " + menu.getId() + ", Nombre: " + menu.getNombre());
+        }
     }
 
-    public void displayListMenus(List<Menu> menus) {
-        System.out.println("\n== Menús ==");
-        for (Menu menu : menus) {
-            System.out.println("ID: " + menu.getId() +
-                               ", Descripción: " + menu.getDescripcion());
-        }
+    @Override
+    public void mostrarMensaje(String mensaje) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarMensaje'");
     }
 }

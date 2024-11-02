@@ -1,21 +1,21 @@
 package vista;
 
+import interfaces.IMostrarMensaje;
 import modelo.ReservaMesa;
+
 import java.util.List;
 
-public class ViewReservaMesa {
-
-    public void mostrarMensaje(String mensaje) {
-        System.out.println(mensaje);
+public class ViewReservaMesa implements IMostrarMensaje {
+    public void displayListReservaMesas(List<ReservaMesa> reservaMesas) {
+        System.out.println(" == Lista de Reservas de Mesa == ");
+        for (ReservaMesa reserva : reservaMesas) {
+            System.out.println("Id: " + reserva.getId() + ", Mesa ID: " + reserva.getMesaId() + ", Fecha: " + reserva.getFecha());
+        }
     }
 
-    public void displayListReservaMesas(List<ReservaMesa> reservas) {
-        System.out.println("\n== Reservas de Mesas ==");
-        for (ReservaMesa reserva : reservas) {
-            System.out.println("ID: " + reserva.getId() +
-                               ", Fecha: " + reserva.getFecha() +
-                               ", Mesa ID: " + reserva.getMesaId() +
-                               ", Cliente: " + reserva.getCliente());
-        }
+    @Override
+    public void mostrarMensaje(String mensaje) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarMensaje'");
     }
 }

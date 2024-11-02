@@ -1,19 +1,21 @@
 package vista;
 
+import interfaces.IMostrarMensaje;
 import modelo.TipoTercero;
+
 import java.util.List;
 
-public class ViewTipoTercero {
-
-    public void mostrarMensaje(String mensaje) {
-        System.out.println(mensaje);
+public class ViewTipoTercero implements IMostrarMensaje {
+    public void displayListTipoTerceros(List<TipoTercero> tipoTerceros) {
+        System.out.println(" == Lista de Tipos de Tercero == ");
+        for (TipoTercero tipo : tipoTerceros) {
+            System.out.println("Id: " + tipo.getId() + ", Descripción: " + tipo.getDescripcion());
+        }
     }
 
-    public void displayListTipoTerceros(List<TipoTercero> tipos) {
-        System.out.println("\n== Tipos de Tercero ==");
-        for (TipoTercero tipo : tipos) {
-            System.out.println("ID: " + tipo.getId() +
-                               ", Descripción: " + tipo.getDescripcion());
-        }
+    @Override
+    public void mostrarMensaje(String mensaje) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarMensaje'");
     }
 }
