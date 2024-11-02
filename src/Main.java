@@ -69,7 +69,7 @@ public class Main {
         viewEstadoMesa.displayListEstadoMesas(estadosMesa);
         List<Mesa> mesas = new ArrayList<>();
         mesas.add(mesa);
-        viewMesa.displayListMesas(mesas);
+        viewMesa.displayMesas(mesas);
 
         // Ejemplo de Factura y EstadoFactura
         EstadoFactura estadoFactura = new EstadoFactura(1, "Pagada");

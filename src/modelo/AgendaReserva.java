@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class AgendaReserva {
     private int id;
     private String fecha;
@@ -18,5 +20,15 @@ public class AgendaReserva {
     @Override
     public String toString() {
         return "AgendaReserva [ID: " + id + ", Fecha: " + fecha + ", NID: " + nid + "]";
+    }
+
+    public static void insertAgendaReserva(AgendaReserva agendaReserva) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertAgendaReserva'");
+    }
+
+    public static List<AgendaReserva> getAllAgendaReservas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllAgendaReservas'");
     }
 }

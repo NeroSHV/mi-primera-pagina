@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class Tercero {
     private String nid;
     private String nombres;
@@ -22,5 +24,15 @@ public class Tercero {
     public String toString() {
         return "Tercero [NID: " + nid + ", Nombres: " + nombres + ", Apellidos: " + apellidos + 
                ", TipoTerceroID: " + tipoTerceroId + "]";
+    }
+
+    public static void insertTercero(Tercero tercero) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertTercero'");
+    }
+
+    public static List<Tercero> getAllTerceros() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllTerceros'");
     }
 }

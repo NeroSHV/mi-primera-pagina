@@ -21,6 +21,6 @@ public class ReservaMesaController {
     // Mostrar todas las reservas de mesa en la vista
     public void displayAllReservaMesas() {
         List<ReservaMesa> reservas = ReservaMesa.getAllReservaMesas();
-        view.displayReservaMesas(reservas);
+        view.displayListReservaMesas(reservas);
     }
 }

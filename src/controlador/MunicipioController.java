@@ -21,6 +21,6 @@ public class MunicipioController {
     // Mostrar todos los municipios en la vista
     public void displayAllMunicipios() {
         List<Municipio> municipios = Municipio.getAllMunicipios();
-        view.displayMunicipios(municipios);
+        view.displayListMunicipios(municipios);
     }
 }

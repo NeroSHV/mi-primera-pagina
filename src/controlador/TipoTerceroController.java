@@ -21,6 +21,6 @@ public class TipoTerceroController {
     // Mostrar todos los tipos de tercero en la vista
     public void displayAllTipoTerceros() {
         List<TipoTercero> tipos = TipoTercero.getAllTipoTerceros();
-        view.displayTipoTerceros(tipos);
+        view.displayListTipoTerceros(tipos);
     }
 }

@@ -21,7 +21,7 @@ public class FacturaController {
     // Mostrar todas las facturas en la vista
     public void displayAllFacturas() {
         List<Factura> facturas = Factura.getAllFacturas();
-        view.displayFacturas(facturas);
+        view.displayListFacturas(facturas);
     }
 }
 

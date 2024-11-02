@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class MenuMesa {
     private int id;
     private String descripcion;
@@ -15,5 +17,15 @@ public class MenuMesa {
     @Override
     public String toString() {
         return "MenuMesa [ID: " + id + ", Descripción: " + descripcion + "]";
+    }
+
+    public static void insertMenuMesa(MenuMesa menuMesa) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertMenuMesa'");
+    }
+
+    public static List<MenuMesa> getAllMenuMesas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllMenuMesas'");
     }
 }

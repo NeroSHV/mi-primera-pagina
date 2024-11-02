@@ -21,6 +21,6 @@ public class DetalleMenuController {
     // Mostrar todos los detalles de menú en la vista
     public void displayAllDetalleMenus() {
         List<DetalleMenu> detalles = DetalleMenu.getAllDetalleMenus();
-        view.displayDetalleMenus(detalles);
+        view.displayListDetalleMenus(detalles);
     }
 }

@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class Mesa {
     private int id;
     private int capacidad;
@@ -23,5 +25,15 @@ public class Mesa {
     public String toString() {
         return "Mesa [ID: " + id + ", Capacidad: " + capacidad + 
                ", Disponible: " + (disponible ? "Sí" : "No") + "]";
+    }
+
+    public static void insertMesa(Mesa mesa) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertMesa'");
+    }
+
+    public static List<Mesa> getAllMesas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllMesas'");
     }
 }

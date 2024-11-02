@@ -21,6 +21,6 @@ public class MenuMesaController {
     // Mostrar todos los menús para mesa en la vista
     public void displayAllMenuMesas() {
         List<MenuMesa> menus = MenuMesa.getAllMenuMesas();
-        view.displayMenuMesas(menus);
+        view.displayListMenuMesas(menus);
     }
 }

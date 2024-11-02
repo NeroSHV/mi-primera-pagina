@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class DetalleMenu {
     private int id;
     private int menuId;
@@ -18,5 +20,15 @@ public class DetalleMenu {
     @Override
     public String toString() {
         return "DetalleMenu [ID: " + id + ", Menu: " + menuId + ", Plato: " + platoId + "]";
+    }
+
+    public static void insertDetalleMenu(DetalleMenu detalleMenu) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertDetalleMenu'");
+    }
+
+    public static List<DetalleMenu> getAllDetalleMenus() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllDetalleMenus'");
     }
 }

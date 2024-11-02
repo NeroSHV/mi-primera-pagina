@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class TipoTercero {
     private int id;
     private String descripcion;
@@ -15,5 +17,15 @@ public class TipoTercero {
     @Override
     public String toString() {
         return "TipoTercero [ID: " + id + ", Descripción: " + descripcion + "]";
+    }
+
+    public static void insertTipoTercero(TipoTercero tipoTercero) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertTipoTercero'");
+    }
+
+    public static List<TipoTercero> getAllTipoTerceros() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllTipoTerceros'");
     }
 }

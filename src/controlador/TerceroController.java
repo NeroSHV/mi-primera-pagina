@@ -21,6 +21,6 @@ public class TerceroController {
     // Mostrar todos los terceros en la vista
     public void displayAllTerceros() {
         List<Tercero> terceros = Tercero.getAllTerceros();
-        view.displayTerceros(terceros);
+        view.displayListTerceros(terceros);
     }
 }

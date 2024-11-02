@@ -21,6 +21,6 @@ public class AgendaReservaController {
     // Mostrar todas las reservas de la agenda en la vista
     public void displayAllAgendaReservas() {
         List<AgendaReserva> reservas = AgendaReserva.getAllAgendaReservas();
-        view.displayAgendaReservas(reservas);
+        view.displayListAgendaReservas(reservas);
     }
 }

@@ -21,6 +21,6 @@ public class DetalleFacturaController {
     // Mostrar todos los detalles de factura en la vista
     public void displayAllDetalleFacturas() {
         List<DetalleFactura> detalles = DetalleFactura.getAllDetalleFacturas();
-        view.displayDetalleFacturas(detalles);
+        view.displayListDetalleFacturas(detalles);
     }
 }

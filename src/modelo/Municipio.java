@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class Municipio {
     private int id;
     private String nombre;
@@ -15,5 +17,15 @@ public class Municipio {
     @Override
     public String toString() {
         return "Municipio [ID: " + id + ", Nombre: " + nombre + "]";
+    }
+
+    public static void insertMunicipio(Municipio municipio) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertMunicipio'");
+    }
+
+    public static List<Municipio> getAllMunicipios() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllMunicipios'");
     }
 }

@@ -21,6 +21,6 @@ public class TipoPlatoController {
     // Mostrar todos los tipos de plato en la vista
     public void displayAllTipoPlatos() {
         List<TipoPlato> tipos = TipoPlato.getAllTipoPlatos();
-        view.displayTipoPlatos(tipos);
+        view.displayListTipoPlatos(tipos);
     }
 }

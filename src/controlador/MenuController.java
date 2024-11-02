@@ -21,6 +21,6 @@ public class MenuController {
     // Mostrar todos los menús en la vista
     public void displayAllMenus() {
         List<Menu> menus = Menu.getAllMenus();
-        view.displayMenus(menus);
+        view.displayListMenus(menus);
     }
 }

@@ -13,8 +13,8 @@ public class ViewDetalleFactura {
         System.out.println("\n== Detalles de Facturas ==");
         for (DetalleFactura detalle : detalles) {
             System.out.println("ID: " + detalle.getId() +
-                               ", Factura ID: " + detalle.getFacturaID() +
-                               ", Plato ID: " + detalle.getPlatoID() +
+                               ", Factura ID: " + detalle.getFacturaId() +
+                               ", Plato ID: " + detalle.getId() +
                                ", Cantidad: " + detalle.getCantidad());
         }
     }

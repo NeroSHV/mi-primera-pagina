@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class EstadoReserva {
     private int id;
     private String estado;
@@ -15,5 +17,15 @@ public class EstadoReserva {
     @Override
     public String toString() {
         return "EstadoReserva [ID: " + id + ", Estado: " + estado + "]";
+    }
+
+    public static void insertEstadoReserva(EstadoReserva estadoReserva) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertEstadoReserva'");
+    }
+
+    public static List<EstadoReserva> getAllEstadoReservas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllEstadoReservas'");
     }
 }

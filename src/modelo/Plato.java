@@ -1,6 +1,9 @@
 package modelo;
 
+import java.util.List;
+
 public class Plato {
+    public static List<Plato> getAllPl;
     private int id;
     private String nombre;
     private double precio;
@@ -18,5 +21,10 @@ public class Plato {
     @Override
     public String toString() {
         return "Plato [ID: " + id + ", Nombre: " + nombre + ", Precio: $" + precio + "]";
+    }
+
+    public static void insertPlato(Plato plato) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertPlato'");
     }
 }

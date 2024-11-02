@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class Factura {
     private int id;
     private String fecha;
@@ -18,5 +20,15 @@ public class Factura {
     @Override
     public String toString() {
         return "Factura [ID: " + id + ", Fecha: " + fecha + ", Total: $" + total + "]";
+    }
+
+    public static void insertFactura(Factura factura) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertFactura'");
+    }
+
+    public static List<Factura> getAllFacturas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllFacturas'");
     }
 }

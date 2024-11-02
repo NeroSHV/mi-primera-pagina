@@ -21,6 +21,6 @@ public class EstadoMesaController {
     // Mostrar todos los estados de mesa en la vista
     public void displayAllEstadoMesas() {
         List<EstadoMesa> estados = EstadoMesa.getAllEstadoMesas();
-        view.displayEstadoMesas(estados);
+        view.displayListEstadoMesas(estados);
     }
 }

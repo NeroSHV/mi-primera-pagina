@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class DetalleFactura {
     private int id;
     private int facturaId;
@@ -31,5 +33,15 @@ public class DetalleFactura {
                ", Plato ID: " + platoId + 
                ", Cantidad: " + cantidad + 
                ", Subtotal: $" + subtotal + "]"; 
+    }
+
+    public static void insertDetalleFactura(DetalleFactura detalleFactura) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertDetalleFactura'");
+    }
+
+    public static List<DetalleFactura> getAllDetalleFacturas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllDetalleFacturas'");
     }
 }

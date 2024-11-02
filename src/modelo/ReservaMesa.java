@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class ReservaMesa {
     private int id;
     private String fecha;
@@ -22,5 +24,15 @@ public class ReservaMesa {
     public String toString() {
         return "Reserva [ID: " + id + ", Fecha: " + fecha + 
                ", Mesa: " + mesaId + ", Cliente: " + cliente + "]";
+    }
+
+    public static List<ReservaMesa> getAllReservaMesas() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllReservaMesas'");
+    }
+
+    public static void insertReservaMesa(ReservaMesa reservaMesa) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertReservaMesa'");
     }
 }

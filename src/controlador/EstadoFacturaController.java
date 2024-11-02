@@ -21,6 +21,6 @@ public class EstadoFacturaController {
     // Mostrar todos los estados de factura en la vista
     public void displayAllEstadoFacturas() {
         List<EstadoFactura> estados = EstadoFactura.getAllEstadoFacturas();
-        view.displayEstadoFacturas(estados);
+        view.displayListEstadoFacturas(estados);
     }
 }

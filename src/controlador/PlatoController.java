@@ -2,14 +2,11 @@ package controlador;
 
 import modelo.Plato;
 import vista.ViewPlato;
-import java.util.List;
+
 
 public class PlatoController {
-    private ViewPlato view;
-
     // Constructor
     public PlatoController(ViewPlato view) {
-        this.view = view;
     }
 
     // Insertar un nuevo plato
@@ -19,5 +16,7 @@ public class PlatoController {
     }
 
     // Mostrar todos los platos en la vista
-    public void displayAllPlatos() {
-        List<Plato> platos = Plato.getAllPl
+    
+    
+    
+}

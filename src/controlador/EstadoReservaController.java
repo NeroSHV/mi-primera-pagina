@@ -21,6 +21,6 @@ public class EstadoReservaController {
     // Mostrar todos los estados de reserva en la vista
     public void displayAllEstadoReservas() {
         List<EstadoReserva> estados = EstadoReserva.getAllEstadoReservas();
-        view.displayEstadoReservas(estados);
+        view.displayListEstadoReservas(estados);
     }
 }
