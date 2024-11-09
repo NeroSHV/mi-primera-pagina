@@ -75,4 +75,14 @@ public class DetalleFactura {
         }
         return detalles;
     }
+
+    public String getPlatoId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPlatoId'");
+    }
+
+    public String getPrecio() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPrecio'");
+    }
 }

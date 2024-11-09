@@ -12,9 +12,12 @@ public class ReservaMesa {
     private String agendaReservaId;
 
    
-    public ReservaMesa(int int1, int int2, String string, String string2) {
+    public ReservaMesa(int int1, String string, int int2, String string2) {
             //TODO Auto-generated constructor stub
         }
+        public ReservaMesa(int int1, String string, int mesaId2, String string2) {
+        //TODO Auto-generated constructor stub
+    }
         public int getReservaMesaId() { return reservaMesaId; }
         public String getCantidadMesas() { return cantidadMesas; }
         public int getMesaId() { return mesaId; }
@@ -60,5 +63,9 @@ public class ReservaMesa {
     public String getFecha() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getFecha'");
+    }
+    public String getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
     }
 }

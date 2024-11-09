@@ -20,6 +20,10 @@ public class Menu {
         this.detalleMenuId = detalleMenuId;
     }
 
+    public Menu(int i, String string, String string2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public int getMenuId() { return menuId; }
     public String getDescripcion() { return descripcion; }
     public int getTipoPortafolioId() { return tipoPortafolioId; }
@@ -63,5 +67,10 @@ public class Menu {
             e.printStackTrace();
         }
         return menus;
+    }
+
+    public String getNombre() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNombre'");
     }
 }

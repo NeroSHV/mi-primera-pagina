@@ -54,4 +54,14 @@ public class Plato {
         }
         return platos;
     }
+
+    public String getNombre() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNombre'");
+    }
+
+    public String getPrecio() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPrecio'");
+    }
 }
