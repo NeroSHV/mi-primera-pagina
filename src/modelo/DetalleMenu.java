@@ -1,46 +1,37 @@
 package modelo;
 
 import db.connection;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DetalleMenu {
-    private int id;
+    private String detalleMenuId;
     private int menuId;
     private int platoId;
+    private int cantidad;
 
-    public DetalleMenu(int id, int menuId, int platoId) {
-        this.id = id;
+    public DetalleMenu(String detalleMenuId, int menuId, int platoId, int cantidad) {
+        this.detalleMenuId = detalleMenuId;
         this.menuId = menuId;
         this.platoId = platoId;
+        this.cantidad = cantidad;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public int getMenuId() {
-        return menuId;
-    }
-
-    public int getPlatoId() {
-        return platoId;
-    }
+    public String getDetalleMenuId() { return detalleMenuId; }
+    public int getMenuId() { return menuId; }
+    public int getPlatoId() { return platoId; }
+    public int getCantidad() { return cantidad; }
 
     public static void insertDetalleMenu(DetalleMenu detalleMenu) {
         Connection con = connection.getConnection();
-
-        String sql = "INSERT INTO detalle_menu (id, menu_id, plato_id) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO detalle_menu (detalle_menu_id, menu_id, plato_id, cantidad) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
-            statement.setInt(1, detalleMenu.getId());
+            statement.setString(1, detalleMenu.getDetalleMenuId());
             statement.setInt(2, detalleMenu.getMenuId());
             statement.setInt(3, detalleMenu.getPlatoId());
+            statement.setInt(4, detalleMenu.getCantidad());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,27 +41,22 @@ public class DetalleMenu {
     public static List<DetalleMenu> getAllDetalleMenus() {
         Connection con = connection.getConnection();
         List<DetalleMenu> detalles = new ArrayList<>();
-
         String sql = "SELECT * FROM detalle_menu";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                DetalleMenu detalleMenu = new DetalleMenu(
-                        rs.getInt("id"),
-                        rs.getInt("menu_id"),
-                        rs.getInt("plato_id")
+                DetalleMenu detalle = new DetalleMenu(
+                    rs.getString("detalle_menu_id"),
+                    rs.getInt("menu_id"),
+                    rs.getInt("plato_id"),
+                    rs.getInt("cantidad")
                 );
-                detalles.add(detalleMenu);
+                detalles.add(detalle);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return detalles;
-    }
-
-    public String getCantidad() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCantidad'");
     }
 }

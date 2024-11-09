@@ -22,7 +22,7 @@ import modelo.EstadoReserva;
 import modelo.Mesa;
 import modelo.ReservaMesa;
 import modelo.EstadoMesa;
-import modelo.MenuMesa;
+import modelo.DetalleMenu;
 import modelo.Menu;
 import modelo.DetalleMenu;
 import modelo.Plato;
@@ -110,7 +110,7 @@ public class Main {
         mesaController.displayAllMesas();
 
         // Ejemplo: Crear e insertar una nueva reserva
-        ReservaMesa nuevaReserva = new ReservaMesa(1, nuevaMesa.getId(), nuevoTercero.getId(), "2024-11-01");
+        ReservaMesa nuevaReserva = new ReservaMesa(1, nuevaMesa.getMesaId(), nuevoTercero.getNid(), "2024-11-01");
         reservaMesaController.insertNewReservaMesa(nuevaReserva);
         reservaMesaController.displayAllReservasMesa();
 

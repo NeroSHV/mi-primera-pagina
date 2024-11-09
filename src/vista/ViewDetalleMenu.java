@@ -9,7 +9,7 @@ public class ViewDetalleMenu implements IMostrarMensaje {
     public void displayListDetalleMenus(List<DetalleMenu> detalleMenus) {
         System.out.println(" == Lista de Detalles de Menú == ");
         for (DetalleMenu detalle : detalleMenus) {
-            System.out.println("Id: " + detalle.getId() + ", Plato ID: " + detalle.getPlatoId() + ", Cantidad: " + detalle.getCantidad());
+            System.out.println("Id: " + detalle.getMenuId() + ", Plato ID: " + detalle.getPlatoId() + ", Cantidad: " + detalle.getCantidad());
         }
     }
 

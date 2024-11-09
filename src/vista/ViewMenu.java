@@ -9,7 +9,7 @@ public class ViewMenu implements IMostrarMensaje {
     public void displayListMenus(List<Menu> menus) {
         System.out.println(" == Lista de Menús == ");
         for (Menu menu : menus) {
-            System.out.println("Id: " + menu.getId() + ", Nombre: " + menu.getNombre());
+            System.out.println("Id: " + menu.getMenuId() + ", Nombre: " + menu.getNombrePlato());
         }
     }
 

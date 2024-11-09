@@ -9,7 +9,7 @@ public class ViewTercero implements IMostrarMensaje {
     public void displayListTerceros(List<Tercero> terceros) {
         System.out.println(" == Lista de Terceros == ");
         for (Tercero tercero : terceros) {
-            System.out.println("Id: " + tercero.getId() + ", Nombre: " + tercero.getNombre() + ", Tipo ID: " + tercero.getTipoTerceroId());
+            System.out.println("Id: " + tercero.getNid() + ", Nombre: " + tercero.getNombres() + ", Tipo ID: " + tercero.getTipoTerceroId());
         }
     }
 

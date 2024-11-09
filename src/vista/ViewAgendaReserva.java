@@ -9,7 +9,7 @@ public class ViewAgendaReserva implements IMostrarMensaje {
     public void displayListAgendaReservas(List<AgendaReserva> agendaReservas) {
         System.out.println(" == Lista de Agendas de Reserva == ");
         for (AgendaReserva reserva : agendaReservas) {
-            System.out.println("Id: " + reserva.getId() + ", Fecha: " + reserva.getFecha() + ", Estado: " + reserva.getEstado());
+            System.out.println("Id: " + reserva.getId() + ", Fecha: " + reserva.getFechaReserva() + ", Estado: " + reserva.getEstadoReservaId());
         }
     }
 
