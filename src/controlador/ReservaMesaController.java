@@ -18,7 +18,7 @@ public class ReservaMesaController {
     }
 
     public void displayAllReservaMesas() {
-        List<ReservaMesa> reservaMesas = ReservaMesa.getAllReservasMesa();
+        List<ReservaMesa> reservaMesas = ReservaMesa.getAllReservaMesas();
         view.displayListReservaMesas(reservaMesas);
     }
 

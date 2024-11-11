@@ -1,52 +1,6 @@
-import controlador.TipoTerceroController;
-import controlador.TerceroController;
-import controlador.MunicipioController;
-import controlador.AgendaReservaController;
-import controlador.EstadoReservaController;
-import controlador.MesaController;
-import controlador.ReservaMesaController;
-import controlador.EstadoMesaController;
-import controlador.MenuReservadoController;
-import controlador.MenuController;
-import controlador.DetalleMenuController;
-import controlador.PlatoController;
-import controlador.TipoPlatoController;
-import controlador.FacturaController;
-import controlador.DetalleFacturaController;
-import controlador.EstadoFacturaController;
-import modelo.TipoTercero;
-import modelo.Tercero;
-import modelo.Municipio;
-import modelo.AgendaReserva;
-import modelo.EstadoReserva;
-import modelo.Mesa;
-import modelo.ReservaMesa;
-import modelo.EstadoMesa;
-import modelo.DetalleMenu;
-import modelo.Menu;
-import modelo.MenuReservado;
-import modelo.DetalleMenu;
-import modelo.Plato;
-import modelo.TipoPlato;
-import modelo.Factura;
-import modelo.DetalleFactura;
-import modelo.EstadoFactura;
-import vista.ViewTipoTercero;
-import vista.ViewTercero;
-import vista.ViewMunicipio;
-import vista.ViewAgendaReserva;
-import vista.ViewEstadoReserva;
-import vista.ViewMesa;
-import vista.ViewReservaMesa;
-import vista.ViewEstadoMesa;
-import vista.ViewMenuReservado;
-import vista.ViewMenu;
-import vista.ViewDetalleMenu;
-import vista.ViewPlato;
-import vista.ViewTipoPlato;
-import vista.ViewFactura;
-import vista.ViewDetalleFactura;
-import vista.ViewEstadoFactura;
+import controlador.*;
+import modelo.*;
+import vista.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -109,7 +63,7 @@ public class Main {
         mesaController.displayAllMesas();
 
         // Ejemplo: Crear e insertar una nueva reserva de mesa
-        ReservaMesa nuevaReserva = new ReservaMesa(1, "2", nuevaMesa.getMesaId(), "1234567890");  
+        ReservaMesa nuevaReserva = new ReservaMesa(1, 2, nuevaMesa.getMesaId(), "1234567890");
         reservaMesaController.insertNewReservaMesa(nuevaReserva);
         reservaMesaController.displayAllReservasMesa();
 

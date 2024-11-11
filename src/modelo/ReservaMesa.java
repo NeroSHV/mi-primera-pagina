@@ -7,29 +7,40 @@ import java.util.List;
 
 public class ReservaMesa {
     private int reservaMesaId;
-    private String cantidadMesas;
+    private int cantidadMesas;
     private int mesaId;
     private String agendaReservaId;
 
-   
-    public ReservaMesa(int int1, String string, int int2, String string2) {
-            //TODO Auto-generated constructor stub
-        }
-        public ReservaMesa(int int1, String string, int mesaId2, String string2) {
-        //TODO Auto-generated constructor stub
+    public ReservaMesa(int reservaMesaId, int cantidadMesas, int mesaId, String agendaReservaId) {
+        this.reservaMesaId = reservaMesaId;
+        this.cantidadMesas = cantidadMesas;
+        this.mesaId = mesaId;
+        this.agendaReservaId = agendaReservaId;
     }
-        public int getReservaMesaId() { return reservaMesaId; }
-        public String getCantidadMesas() { return cantidadMesas; }
-        public int getMesaId() { return mesaId; }
-        public String getAgendaReservaId() { return agendaReservaId; }
-    
-        public static void insertReservaMesa(ReservaMesa reservaMesa) {
+
+    public int getReservaMesaId() {
+        return reservaMesaId;
+    }
+
+    public int getCantidadMesas() {
+        return cantidadMesas;
+    }
+
+    public int getMesaId() {
+        return mesaId;
+    }
+
+    public String getAgendaReservaId() {
+        return agendaReservaId;
+    }
+
+    public static void insertReservaMesa(ReservaMesa reservaMesa) {
             Connection con = connection.getConnection();
             String sql = "INSERT INTO reserva_mesa (reserva_mesa_id, cantidad_mesas, mesa_id, agenda_reserva_id) VALUES (?, ?, ?, ?)";
     
             try (PreparedStatement statement = con.prepareStatement(sql)) {
                 statement.setInt(1, reservaMesa.getReservaMesaId());
-                statement.setString(2, reservaMesa.getCantidadMesas());
+                statement.setInt(2, reservaMesa.getCantidadMesas());
                 statement.setInt(3, reservaMesa.getMesaId());
                 statement.setString(4, reservaMesa.getAgendaReservaId());
                 statement.executeUpdate();
@@ -48,8 +59,8 @@ public class ReservaMesa {
                 while (rs.next()) {
                     ReservaMesa reserva = new ReservaMesa(
                     rs.getInt("reserva_mesa_id"),
+                    rs.getInt("cantidad_mesas"),
                     rs.getInt("mesa_id"),
-                    rs.getString("cantidad_mesas"),
                     rs.getString("agenda_reserva_id")
                 );
                 reservas.add(reserva);
