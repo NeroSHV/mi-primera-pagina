@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Bienvenido a nuestro sistema de restaurante!");
 
+        //Hola
+
         // Inicializar vistas
         ViewTipoTercero viewTipoTercero = new ViewTipoTercero();
         ViewTercero viewTercero = new ViewTercero();
