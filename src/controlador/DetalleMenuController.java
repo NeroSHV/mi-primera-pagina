@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.DetalleMenu;
 import vista.ViewDetalleMenu;
-
 import java.util.List;
 
 public class DetalleMenuController {
@@ -22,4 +21,3 @@ public class DetalleMenuController {
         view.displayListDetalleMenus(detalleMenus);
     }
 }
-

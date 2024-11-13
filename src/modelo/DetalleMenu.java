@@ -18,6 +18,10 @@ public class DetalleMenu {
         this.cantidad = cantidad;
     }
 
+    public DetalleMenu(int i, int menuId2, int platoId2, String string) {
+        //TODO Auto-generated constructor stub
+    }
+
     public String getDetalleMenuId() { return detalleMenuId; }
     public int getMenuId() { return menuId; }
     public int getPlatoId() { return platoId; }

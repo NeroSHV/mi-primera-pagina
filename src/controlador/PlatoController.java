@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.Plato;
 import vista.ViewPlato;
-
 import java.util.List;
 
 public class PlatoController {

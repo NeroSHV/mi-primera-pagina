@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.DetalleFactura;
 import vista.ViewDetalleFactura;
-
 import java.util.List;
 
 public class DetalleFacturaController {

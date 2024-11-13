@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.Factura;
 import vista.ViewFactura;
-
 import java.util.List;
 
 public class FacturaController {

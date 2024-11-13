@@ -26,6 +26,11 @@ public class Factura {
         this.agendaReservaId = agendaReservaId;
     }
 
+    public Factura(int facturaId2, String string, String string2, double valor2, int estadoPagoId2,
+            int tipoDocContableId2, int estadoFacturaId2, String agendaReservaId2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public int getFacturaId() { return facturaId; }
     public Date getFechaEmision() { return fechaEmision; }
     public Date getFechaVence() { return fechaVence; }

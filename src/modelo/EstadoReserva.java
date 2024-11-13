@@ -9,9 +9,13 @@ public class EstadoReserva {
     private int estadoReservaId;
     private String descripcion;
 
-    public EstadoReserva(int estadoReservaId, String descripcion) {
+    public EstadoReserva() {
         this.estadoReservaId = estadoReservaId;
         this.descripcion = descripcion;
+    }
+
+    public EstadoReserva() {
+        //TODO Auto-generated constructor stub
     }
 
     public int getEstadoReservaId() { return estadoReservaId; }
