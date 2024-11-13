@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Bienvenido a nuestro sistema de restaurante!");
 
-        //Hola
+        // prueba para un commit
 
         // Inicializar vistas
         ViewTipoTercero viewTipoTercero = new ViewTipoTercero();
