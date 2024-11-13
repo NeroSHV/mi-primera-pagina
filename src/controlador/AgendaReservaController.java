@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.AgendaReserva;
 import vista.ViewAgendaReserva;
-
 import java.util.List;
 
 public class AgendaReservaController {
@@ -20,5 +19,10 @@ public class AgendaReservaController {
     public void displayAllAgendaReservas() {
         List<AgendaReserva> agendaReservas = AgendaReserva.getAllAgendaReservas();
         view.displayListAgendaReservas(agendaReservas);
+    }
+
+    public void registrarReserva(Reserva reserva) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registrarReserva'");
     }
 }

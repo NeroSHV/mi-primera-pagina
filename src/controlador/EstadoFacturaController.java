@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.EstadoFactura;
 import vista.ViewEstadoFactura;
-
 import java.util.List;
 
 public class EstadoFacturaController {

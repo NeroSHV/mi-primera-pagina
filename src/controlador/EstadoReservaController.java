@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.EstadoReserva;
 import vista.ViewEstadoReserva;
-
 import java.util.List;
 
 public class EstadoReservaController {
@@ -20,5 +19,10 @@ public class EstadoReservaController {
     public void displayAllEstadoReservas() {
         List<EstadoReserva> estados = EstadoReserva.getAllEstadoReservas();
         view.displayListEstadoReservas(estados);
+    }
+
+    public void cambiarEstadoReserva(EstadoReserva estadoReserva) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'cambiarEstadoReserva'");
     }
 }

@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.EstadoMesa;
 import vista.ViewEstadoMesa;
-
 import java.util.List;
 
 public class EstadoMesaController {
@@ -20,5 +19,10 @@ public class EstadoMesaController {
     public void displayAllEstadoMesas() {
         List<EstadoMesa> estados = EstadoMesa.getAllEstadoMesas();
         view.displayListEstadoMesas(estados);
+    }
+
+    public void actualizarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizarEstado'");
     }
 }

@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.TipoPlato;
 import vista.ViewTipoPlato;
-
 import java.util.List;
 
 public class TipoPlatoController {
