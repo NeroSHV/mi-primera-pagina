@@ -6,16 +6,21 @@ import modelo.AgendaReserva;
 import java.util.List;
 
 public class ViewAgendaReserva implements IMostrarMensaje {
+
+    // Método para mostrar la lista de agendas de reserva
     public void displayListAgendaReservas(List<AgendaReserva> agendaReservas) {
         System.out.println(" == Lista de Agendas de Reserva == ");
         for (AgendaReserva reserva : agendaReservas) {
-            System.out.println("Id: " + reserva.getId() + ", Fecha: " + reserva.getFechaReserva() + ", Estado: " + reserva.getEstadoReservaId());
+            System.out.println("Id: " + reserva.getId() +
+                               "\nFecha: " + reserva.getFechaReserva() +
+                               "\nEstado: " + reserva.getEstadoReservaId());
+            System.out.println("-------------------------------------");  // Línea separadora para mejor legibilidad
         }
     }
 
     @Override
     public void mostrarMensaje(String mensaje) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarMensaje'");
+        // Implementación básica para mostrar el mensaje
+        System.out.println("Mensaje: " + mensaje);
     }
 }
