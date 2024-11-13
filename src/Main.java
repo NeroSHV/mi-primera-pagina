@@ -44,6 +44,15 @@ public class Main {
         DetalleFacturaController detalleFacturaController = new DetalleFacturaController(viewDetalleFactura);
         EstadoFacturaController estadoFacturaController = new EstadoFacturaController(viewEstadoFactura);
 
+        TipoPlato tipoPlato = new TipoPlato(1,"Entrada");
+        tipoPlatoController.insertNewTipoPlato(tipoPlato);
+        terceroController.displayAllTerceros();
+
+
+        Plato plato = new Plato(1,"Bomba",1);
+        platoController.insertNewPlato(plato);
+        platoController.displayAllPlatos();
+
         // Ejemplo: Crear e insertar un nuevo tipo de tercero
         TipoTercero nuevoTipoTercero = new TipoTercero(1, "Cliente");
         tipoTerceroController.insertNewTipoTercero(nuevoTipoTercero);
