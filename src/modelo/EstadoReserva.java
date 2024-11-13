@@ -9,18 +9,17 @@ public class EstadoReserva {
     private int estadoReservaId;
     private String descripcion;
 
-    public EstadoReserva() {
+    // Constructor con parámetros
+    public EstadoReserva(int estadoReservaId, String descripcion) {
         this.estadoReservaId = estadoReservaId;
         this.descripcion = descripcion;
     }
 
-    public EstadoReserva() {
-        //TODO Auto-generated constructor stub
-    }
-
+    // Getters
     public int getEstadoReservaId() { return estadoReservaId; }
     public String getDescripcion() { return descripcion; }
 
+    // Método para insertar un nuevo EstadoReserva en la base de datos
     public static void insertEstadoReserva(EstadoReserva estadoReserva) {
         Connection con = connection.getConnection();
         String sql = "INSERT INTO estado_reserva (estado_reserva_id, descripcion) VALUES (?, ?)";
@@ -34,6 +33,7 @@ public class EstadoReserva {
         }
     }
 
+    // Obtener todos los registros de EstadoReserva
     public static List<EstadoReserva> getAllEstadoReservas() {
         Connection con = connection.getConnection();
         List<EstadoReserva> estados = new ArrayList<>();
@@ -54,8 +54,6 @@ public class EstadoReserva {
         return estados;
     }
 
-    public String getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
-    }
+    // Método para obtener el ID (eliminamos el método innecesario getId())
+    // Ya tenemos el método getEstadoReservaId(), no es necesario un getId() adicional
 }
