@@ -3,9 +3,6 @@ import modelo.*;
 import vista.*;
 
 public class Main {
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         System.out.println("Bienvenido a nuestro sistema de restaurante!");
 
@@ -13,7 +10,6 @@ public class Main {
         ViewTipoTercero viewTipoTercero = new ViewTipoTercero();
         ViewTercero viewTercero = new ViewTercero();
         ViewMunicipio viewMunicipio = new ViewMunicipio();
-        ViewAgendaReserva viewAgendaReserva = new ViewAgendaReserva();
         ViewEstadoReserva viewEstadoReserva = new ViewEstadoReserva();
         ViewMesa viewMesa = new ViewMesa();
         ViewReservaMesa viewReservaMesa = new ViewReservaMesa();
@@ -31,7 +27,6 @@ public class Main {
         TipoTerceroController tipoTerceroController = new TipoTerceroController(viewTipoTercero);
         TerceroController terceroController = new TerceroController(viewTercero);
         MunicipioController municipioController = new MunicipioController(viewMunicipio);
-        AgendaReservaController agendaReservaController = new AgendaReservaController(viewAgendaReserva);
         EstadoReservaController estadoReservaController = new EstadoReservaController(viewEstadoReserva);
         MesaController mesaController = new MesaController(viewMesa);
         ReservaMesaController reservaMesaController = new ReservaMesaController(viewReservaMesa);
@@ -104,17 +99,9 @@ public class Main {
         EstadoFactura nuevoEstadoFactura = new EstadoFactura(1, "Pagado");
         estadoFacturaController.insertNewEstadoFactura(nuevoEstadoFactura);
         estadoFacturaController.displayAllEstadoFacturas();
-
-        // Usar EstadoMesaController para actualizar el estado de la mesa
-        estadoMesaController.actualizarEstado();  // Método hipotético para actualizar el estado de la mesa
-
-        // Usar AgendaReservaController para gestionar reservas
-        agendaReservaController.registrarReserva(new Reserva(...));  // Método hipotético para registrar reservas
-
-        // Usar MenuReservadoController para mostrar los menús reservados
-        menuReservadoController.mostrarMenuReservado();  // Método hipotético para mostrar menú reservado
-
-        // Usar EstadoReservaController para cambiar el estado de una reserva
-        estadoReservaController.cambiarEstadoReserva(new EstadoReserva(...));  // Método hipotético para cambiar estado de reserva
+        estadoMesaController.actualizarEstado();  
+        menuReservadoController.mostrarMenuReservado();  
+        estadoReservaController.cambiarEstadoReserva(new EstadoReserva()); 
     }
 }
+
