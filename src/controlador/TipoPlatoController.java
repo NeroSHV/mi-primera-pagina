@@ -12,7 +12,7 @@ public class TipoPlatoController {
         this.view = view;
     }
 
-    public void insertNewTipoPlato(TipoPlato newTipoPlato) {
+    public void insertNewTipoPlato (TipoPlato newTipoPlato) {
         TipoPlato.insertTipoPlato(newTipoPlato);
         view.mostrarMensaje("\nTipo de Plato guardado correctamente!");
     }
