@@ -2,109 +2,106 @@ import controlador.*;
 import modelo.*;
 import vista.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Bienvenido a nuestro sistema de restaurante!");
+
         // Inicializar vistas
-        ViewAgendaReserva viewAgendaReserva = new ViewAgendaReserva();
-        ViewDetalleFactura viewDetalleFactura = new ViewDetalleFactura();
-        ViewDetalleMenu viewDetalleMenu = new ViewDetalleMenu();
-        ViewEstadoFactura viewEstadoFactura = new ViewEstadoFactura();
-        ViewEstadoMesa viewEstadoMesa = new ViewEstadoMesa();
-        ViewEstadoReserva viewEstadoReserva = new ViewEstadoReserva();
-        ViewFactura viewFactura = new ViewFactura();
-        ViewMenu viewMenu = new ViewMenu();
-        ViewMenuMesa viewMenuMesa = new ViewMenuMesa();
-        ViewMesa viewMesa = new ViewMesa();
-        ViewMunicipio viewMunicipio = new ViewMunicipio();
-        ViewPlato viewPlato = new ViewPlato();
-        ViewReservaMesa viewReservaMesa = new ViewReservaMesa();
-        ViewTercero viewTercero = new ViewTercero();
-        ViewTipoPlato viewTipoPlato = new ViewTipoPlato();
         ViewTipoTercero viewTipoTercero = new ViewTipoTercero();
+        ViewTercero viewTercero = new ViewTercero();
+        ViewMunicipio viewMunicipio = new ViewMunicipio();
+        ViewEstadoReserva viewEstadoReserva = new ViewEstadoReserva();
+        ViewMesa viewMesa = new ViewMesa();
+        ViewReservaMesa viewReservaMesa = new ViewReservaMesa();
+        ViewEstadoMesa viewEstadoMesa = new ViewEstadoMesa();
+        ViewMenuReservado viewMenuReservado = new ViewMenuReservado();
+        ViewMenu viewMenu = new ViewMenu();
+        ViewDetalleMenu viewDetalleMenu = new ViewDetalleMenu();
+        ViewPlato viewPlato = new ViewPlato();
+        ViewTipoPlato viewTipoPlato = new ViewTipoPlato();
+        ViewFactura viewFactura = new ViewFactura();
+        ViewDetalleFactura viewDetalleFactura = new ViewDetalleFactura();
+        ViewEstadoFactura viewEstadoFactura = new ViewEstadoFactura();
 
         // Inicializar controladores
-        AgendaReservaController agendaReservaController = new AgendaReservaController(viewAgendaReserva);
-        DetalleFacturaController detalleFacturaController = new DetalleFacturaController(viewDetalleFactura);
-        DetalleMenuController detalleMenuController = new DetalleMenuController(viewDetalleMenu);
-        EstadoFacturaController estadoFacturaController = new EstadoFacturaController(viewEstadoFactura);
-        EstadoMesaController estadoMesaController = new EstadoMesaController(viewEstadoMesa);
-        EstadoReservaController estadoReservaController = new EstadoReservaController(viewEstadoReserva);
-        FacturaController facturaController = new FacturaController(viewFactura);
-        MenuController menuController = new MenuController(viewMenu);
-        MenuMesaController menuMesaController = new MenuMesaController(viewMenuMesa);
-        MesaController mesaController = new MesaController(viewMesa);
-        MunicipioController municipioController = new MunicipioController(viewMunicipio);
-        PlatoController platoController = new PlatoController(viewPlato);
-        ReservaMesaController reservaMesaController = new ReservaMesaController(viewReservaMesa);
-        TerceroController terceroController = new TerceroController(viewTercero);
-        TipoPlatoController tipoPlatoController = new TipoPlatoController(viewTipoPlato);
         TipoTerceroController tipoTerceroController = new TipoTerceroController(viewTipoTercero);
+        TerceroController terceroController = new TerceroController(viewTercero);
+        MunicipioController municipioController = new MunicipioController(viewMunicipio);
+        EstadoReservaController estadoReservaController = new EstadoReservaController(viewEstadoReserva);
+        MesaController mesaController = new MesaController(viewMesa);
+        ReservaMesaController reservaMesaController = new ReservaMesaController(viewReservaMesa);
+        EstadoMesaController estadoMesaController = new EstadoMesaController(viewEstadoMesa);
+        MenuReservadoController menuReservadoController = new MenuReservadoController(viewMenuReservado);
+        MenuController menuController = new MenuController(viewMenu);
+        DetalleMenuController detalleMenuController = new DetalleMenuController(viewDetalleMenu);
+        PlatoController platoController = new PlatoController(viewPlato);
+        TipoPlatoController tipoPlatoController = new TipoPlatoController(viewTipoPlato);
+        FacturaController facturaController = new FacturaController(viewFactura);
+        DetalleFacturaController detalleFacturaController = new DetalleFacturaController(viewDetalleFactura);
+        EstadoFacturaController estadoFacturaController = new EstadoFacturaController(viewEstadoFactura);
 
-        // Crear algunos ejemplos de datos y mostrarlos
+        // Ejemplo: Crear e insertar un nuevo tipo de tercero
+        TipoTercero nuevoTipoTercero = new TipoTercero(1, "Cliente");
+        tipoTerceroController.insertNewTipoTercero(nuevoTipoTercero);
+        tipoTerceroController.displayAllTipoTerceros();
 
-        // Ejemplo de Municipio
-        Municipio municipio = new Municipio(1, "Bogotá");
-        List<Municipio> municipios = new ArrayList<>();
-        municipios.add(municipio);
-        viewMunicipio.displayListMunicipios(municipios);
+        // Ejemplo: Crear e insertar un nuevo tercero
+        Tercero nuevoTercero = new Tercero("1234567890", "Juan", "Pérez", "3001234567", "juan.perez@example.com", "Calle Falsa 123", 1, 1);
+        terceroController.insertNewTercero(nuevoTercero);
+        terceroController.displayAllTerceros();
 
-        // Ejemplo de Tercero y TipoTercero
-        TipoTercero tipoTercero = new TipoTercero(1, "Cliente");
-        Tercero tercero = new Tercero("12345", "Juan", "Pérez", tipoTercero.getId());
-        List<TipoTercero> tiposTercero = new ArrayList<>();
-        tiposTercero.add(tipoTercero);
-        viewTipoTercero.displayListTipoTerceros(tiposTercero);
-        List<Tercero> terceros = new ArrayList<>();
-        terceros.add(tercero);
-        viewTercero.displayListTerceros(terceros);
+        // Ejemplo: Crear e insertar un nuevo municipio
+        Municipio nuevoMunicipio = new Municipio(1, "Bogotá");
+        municipioController.insertNewMunicipio(nuevoMunicipio);
+        municipioController.displayAllMunicipios();
 
-        // Ejemplo de Mesa y EstadoMesa
-        EstadoMesa estadoMesa = new EstadoMesa(1, "Disponible");
-        Mesa mesa = new Mesa(1, 4, "Ventana");
-        List<EstadoMesa> estadosMesa = new ArrayList<>();
-        estadosMesa.add(estadoMesa);
-        viewEstadoMesa.displayListEstadoMesas(estadosMesa);
-        List<Mesa> mesas = new ArrayList<>();
-        mesas.add(mesa);
-        viewMesa.displayListMesas(mesas);
+        // Ejemplo: Crear e insertar una nueva mesa
+        Mesa nuevaMesa = new Mesa(1, 4, 6, "Terraza", 1);
+        mesaController.insertNewMesa(nuevaMesa);
+        mesaController.displayAllMesas();
 
-        // Ejemplo de Factura y EstadoFactura
-        EstadoFactura estadoFactura = new EstadoFactura(1, "Pagada");
-        Factura factura = new Factura(1, "2024-10-28", 150000);
-        List<EstadoFactura> estadosFactura = new ArrayList<>();
-        estadosFactura.add(estadoFactura);
-        viewEstadoFactura.displayListEstadoFacturas(estadosFactura);
-        List<Factura> facturas = new ArrayList<>();
-        facturas.add(factura);
-        viewFactura.displayListFacturas(facturas);
+        // Ejemplo: Crear e insertar una nueva reserva de mesa
+        ReservaMesa nuevaReserva = new ReservaMesa(1, "2", nuevaMesa.getMesaId(), "1234567890");
+        reservaMesaController.insertNewReservaMesa(nuevaReserva);
+        reservaMesaController.displayAllReservasMesa();
 
-        // Ejemplo de Menu, DetalleMenu y Plato
-        Plato plato = new Plato(1, "Pizza", 25000);
-        Menu menu = new Menu(1, "Menú Italiano");
-        DetalleMenu detalleMenu = new DetalleMenu(1, menu.getId(), plato.getId());
-        List<Plato> platos = new ArrayList<>();
-        platos.add(plato);
-        viewPlato.displayListPlatos(platos);
-        List<Menu> menus = new ArrayList<>();
-        menus.add(menu);
-        viewMenu.displayListMenus(menus);
-        List<DetalleMenu> detallesMenu = new ArrayList<>();
-        detallesMenu.add(detalleMenu);
-        viewDetalleMenu.displayListDetalleMenus(detallesMenu);
+        // Ejemplo: Crear e insertar un nuevo menú
+        Menu nuevoMenu = new Menu(1, "Menú del Día", 1, "Plato Fuerte", 1);
+        menuController.insertNewMenu(nuevoMenu);
+        menuController.displayAllMenus();
 
-        // Ejemplo de ReservaMesa y AgendaReserva
-        ReservaMesa reservaMesa = new ReservaMesa(1, "2024-10-28", mesa.getId(), tercero.getNid());
-        AgendaReserva agendaReserva = new AgendaReserva(1, "2024-10-28", tercero.getNid());
-        List<ReservaMesa> reservasMesa = new ArrayList<>();
-        reservasMesa.add(reservaMesa);
-        viewReservaMesa.displayListReservaMesas(reservasMesa);
-        List<AgendaReserva> agendasReserva = new ArrayList<>();
-        agendasReserva.add(agendaReserva);
-        viewAgendaReserva.displayListAgendaReservas(agendasReserva);
+        // Ejemplo: Crear e insertar un nuevo detalle de menú
+        DetalleMenu nuevoDetalleMenu = new DetalleMenu(1, 3, 2, "A");
+        detalleMenuController.insertNewDetalleMenu(nuevoDetalleMenu);
+        detalleMenuController.displayAllDetalleMenus();
 
-        System.out.println("Sistema inicializado y ejemplos mostrados en consola.");
+        // Ejemplo: Crear e insertar un nuevo plato
+        Plato nuevoPlato = new Plato(1, "Plato Especial", 1);
+        platoController.insertNewPlato(nuevoPlato);
+        platoController.displayAllPlatos();
+
+        // Ejemplo: Crear e insertar un nuevo tipo de plato
+        TipoPlato nuevoTipoPlato = new TipoPlato(1, "Entrada");
+        tipoPlatoController.insertNewTipoPlato(nuevoTipoPlato);
+        tipoPlatoController.displayAllTipoPlatos();
+
+        // Ejemplo: Crear e insertar una nueva factura
+        Factura nuevaFactura = new Factura(1, "2024-11-01", "2024-11-15", 150000.00, 1, 1, 1, "1234");
+        facturaController.insertNewFactura(nuevaFactura);
+        facturaController.displayAllFacturas();
+
+        // Ejemplo: Crear e insertar un nuevo detalle de factura
+        DetalleFactura nuevoDetalleFactura = new DetalleFactura(1, 2, 50000.00, 1, 1, 1, 1);
+        detalleFacturaController.insertNewDetalleFactura(nuevoDetalleFactura);
+        detalleFacturaController.displayAllDetalleFacturas();
+
+        // Ejemplo: Crear e insertar un nuevo estado de factura
+        EstadoFactura nuevoEstadoFactura = new EstadoFactura(1, "Pagado");
+        estadoFacturaController.insertNewEstadoFactura(nuevoEstadoFactura);
+        estadoFacturaController.displayAllEstadoFacturas();
+        estadoMesaController.actualizarEstado();  
+        menuReservadoController.mostrarMenuReservado();  
+        estadoReservaController.cambiarEstadoReserva(new EstadoReserva()); 
     }
 }
+

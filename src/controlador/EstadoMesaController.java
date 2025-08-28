@@ -7,20 +7,22 @@ import java.util.List;
 public class EstadoMesaController {
     private ViewEstadoMesa view;
 
-    // Constructor
     public EstadoMesaController(ViewEstadoMesa view) {
         this.view = view;
     }
 
-    // Insertar un nuevo estado de mesa
-    public void insertNewEstadoMesa(EstadoMesa estadoMesa) {
-        EstadoMesa.insertEstadoMesa(estadoMesa);
-        System.out.println("Nuevo estado de mesa agregado: " + estadoMesa.getId());
+    public void insertNewEstadoMesa(EstadoMesa newEstadoMesa) {
+        EstadoMesa.insertEstadoMesa(newEstadoMesa);
+        view.mostrarMensaje("\nEstado de Mesa guardado correctamente!");
     }
 
-    // Mostrar todos los estados de mesa en la vista
     public void displayAllEstadoMesas() {
         List<EstadoMesa> estados = EstadoMesa.getAllEstadoMesas();
-        view.displayEstadoMesas(estados);
+        view.displayListEstadoMesas(estados);
+    }
+
+    public void actualizarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizarEstado'");
     }
 }

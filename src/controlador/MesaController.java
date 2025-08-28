@@ -2,25 +2,23 @@ package controlador;
 
 import modelo.Mesa;
 import vista.ViewMesa;
+
 import java.util.List;
 
 public class MesaController {
     private ViewMesa view;
 
-    // Constructor
     public MesaController(ViewMesa view) {
         this.view = view;
     }
 
-    // Insertar una nueva mesa
-    public void insertNewMesa(Mesa mesa) {
-        Mesa.insertMesa(mesa);
-        System.out.println("Nueva mesa agregada: " + mesa.getId());
+    public void insertNewMesa(Mesa newMesa) {
+        Mesa.insertMesa(newMesa);
+        view.mostrarMensaje("\nMesa guardada correctamente!");
     }
 
-    // Mostrar todas las mesas en la vista
     public void displayAllMesas() {
         List<Mesa> mesas = Mesa.getAllMesas();
-        view.displayMesas(mesas);
+        view.displayListMesas(mesas);
     }
 }

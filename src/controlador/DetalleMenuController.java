@@ -7,20 +7,17 @@ import java.util.List;
 public class DetalleMenuController {
     private ViewDetalleMenu view;
 
-    // Constructor
     public DetalleMenuController(ViewDetalleMenu view) {
         this.view = view;
     }
 
-    // Insertar un nuevo detalle de menú
-    public void insertNewDetalleMenu(DetalleMenu detalleMenu) {
-        DetalleMenu.insertDetalleMenu(detalleMenu);
-        System.out.println("Nuevo detalle de menú agregado: " + detalleMenu.getId());
+    public void insertNewDetalleMenu(DetalleMenu newDetalleMenu) {
+        DetalleMenu.insertDetalleMenu(newDetalleMenu);
+        view.mostrarMensaje("\nDetalle de Menú guardado correctamente!");
     }
 
-    // Mostrar todos los detalles de menú en la vista
     public void displayAllDetalleMenus() {
-        List<DetalleMenu> detalles = DetalleMenu.getAllDetalleMenus();
-        view.displayDetalleMenus(detalles);
+        List<DetalleMenu> detalleMenus = DetalleMenu.getAllDetalleMenus();
+        view.displayListDetalleMenus(detalleMenus);
     }
 }

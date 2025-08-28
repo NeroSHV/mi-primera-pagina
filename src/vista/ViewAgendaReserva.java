@@ -1,20 +1,26 @@
 package vista;
 
+import interfaces.IMostrarMensaje;
 import modelo.AgendaReserva;
+
 import java.util.List;
 
-public class ViewAgendaReserva {
+public class ViewAgendaReserva implements IMostrarMensaje {
 
-    public void mostrarMensaje(String mensaje) {
-        System.out.println(mensaje);
+    // Método para mostrar la lista de agendas de reserva
+    public void displayListAgendaReservas(List<AgendaReserva> agendaReservas) {
+        System.out.println(" == Lista de Agendas de Reserva == ");
+        for (AgendaReserva reserva : agendaReservas) {
+            System.out.println("Id: " + reserva.getId() +
+                               "\nFecha: " + reserva.getFechaReserva() +
+                               "\nEstado: " + reserva.getEstadoReservaId());
+            System.out.println("-------------------------------------");  // Línea separadora para mejor legibilidad
+        }
     }
 
-    public void displayListAgendaReservas(List<AgendaReserva> reservas) {
-        System.out.println("\n== Lista de Reservas en la Agenda ==");
-        for (AgendaReserva reserva : reservas) {
-            System.out.println("ID: " + reserva.getId() +
-                               ", Fecha: " + reserva.getFecha() +
-                               ", NID: " + reserva.getNid());
-        }
+    @Override
+    public void mostrarMensaje(String mensaje) {
+        // Implementación básica para mostrar el mensaje
+        System.out.println("Mensaje: " + mensaje);
     }
 }

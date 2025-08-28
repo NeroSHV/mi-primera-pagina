@@ -1,22 +1,39 @@
 package modelo;
 
 public class AgendaReserva {
-    private int id;
-    private String fecha;
-    private String nid;
+    private int id;  // Atributo id
+    private String fechaReserva;
+    private int estadoReservaId;  // Atributo para el estado de la reserva
 
-    public AgendaReserva(int id, String fecha, String nid) {
+    // Constructor
+    public AgendaReserva(int id, String fechaReserva, int estadoReservaId) {
         this.id = id;
-        this.fecha = fecha;
-        this.nid = nid;
+        this.fechaReserva = fechaReserva;
+        this.estadoReservaId = estadoReservaId;
     }
 
-    public int getId() { return id; }
-    public String getFecha() { return fecha; }
-    public String getNid() { return nid; }
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
 
-    @Override
-    public String toString() {
-        return "AgendaReserva [ID: " + id + ", Fecha: " + fecha + ", NID: " + nid + "]";
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFechaReserva() {
+        return fechaReserva;
+    }
+
+    public void setFechaReserva(String fechaReserva) {
+        this.fechaReserva = fechaReserva;
+    }
+
+    public int getEstadoReservaId() {
+        return estadoReservaId;
+    }
+
+    public void setEstadoReservaId(int estadoReservaId) {
+        this.estadoReservaId = estadoReservaId;
     }
 }

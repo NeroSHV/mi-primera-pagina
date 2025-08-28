@@ -1,26 +1,29 @@
 package controlador;
 
 import modelo.AgendaReserva;
+import modelo.ReservaMesa;
 import vista.ViewAgendaReserva;
 import java.util.List;
 
 public class AgendaReservaController {
     private ViewAgendaReserva view;
 
-    // Constructor
     public AgendaReservaController(ViewAgendaReserva view) {
         this.view = view;
     }
 
-    // Insertar una nueva reserva en la agenda
-    public void insertNewAgendaReserva(AgendaReserva agendaReserva) {
-        AgendaReserva.insertAgendaReserva(agendaReserva);
-        System.out.println("Nueva reserva en la agenda: " + agendaReserva.getId());
+    public void insertNewAgendaReserva(AgendaReserva newAgendaReserva) {
+        AgendaReserva.insertAgendaReserva(newAgendaReserva);
+        view.mostrarMensaje("\nAgenda de Reserva guardada correctamente!");
     }
 
-    // Mostrar todas las reservas de la agenda en la vista
     public void displayAllAgendaReservas() {
-        List<AgendaReserva> reservas = AgendaReserva.getAllAgendaReservas();
-        view.displayAgendaReservas(reservas);
+        List<AgendaReserva> agendaReservas = AgendaReserva.getAllAgendaReservas();
+        view.displayListAgendaReservas(agendaReservas);
+    }
+
+    public void registrarReserva(ReservaMesa reserva) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registrarReserva'");
     }
 }

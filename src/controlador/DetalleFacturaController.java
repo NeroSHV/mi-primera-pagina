@@ -7,20 +7,17 @@ import java.util.List;
 public class DetalleFacturaController {
     private ViewDetalleFactura view;
 
-    // Constructor
     public DetalleFacturaController(ViewDetalleFactura view) {
         this.view = view;
     }
 
-    // Insertar un nuevo detalle de factura
-    public void insertNewDetalleFactura(DetalleFactura detalleFactura) {
-        DetalleFactura.insertDetalleFactura(detalleFactura);
-        System.out.println("Nuevo detalle de factura agregado: " + detalleFactura.getId());
+    public void insertNewDetalleFactura(DetalleFactura newDetalleFactura) {
+        DetalleFactura.insertDetalleFactura(newDetalleFactura);
+        view.mostrarMensaje("\nDetalle de Factura guardado correctamente!");
     }
 
-    // Mostrar todos los detalles de factura en la vista
     public void displayAllDetalleFacturas() {
-        List<DetalleFactura> detalles = DetalleFactura.getAllDetalleFacturas();
-        view.displayDetalleFacturas(detalles);
+        List<DetalleFactura> detalleFacturas = DetalleFactura.getAllDetalleFacturas();
+        view.displayListDetalleFacturas(detalleFacturas);
     }
 }

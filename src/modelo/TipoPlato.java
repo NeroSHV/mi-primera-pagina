@@ -1,19 +1,57 @@
 package modelo;
 
+import db.connection;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class TipoPlato {
-    private int id;
+    private int tipoPlatoId;
     private String descripcion;
 
-    public TipoPlato(int id, String descripcion) {
-        this.id = id;
+    public TipoPlato(int tipoPlatoId, String descripcion) {
+        this.tipoPlatoId = tipoPlatoId;
         this.descripcion = descripcion;
     }
 
-    public int getId() { return id; }
+    public int getTipoPlatoId() { return tipoPlatoId; }
     public String getDescripcion() { return descripcion; }
 
-    @Override
-    public String toString() {
-        return "TipoPlato [ID: " + id + ", Descripción: " + descripcion + "]";
+    public static void insertTipoPlato(TipoPlato tipoPlato) {
+        Connection con = connection.getConnection();
+        String sql = "INSERT INTO tipo_plato (tipo_plato_id, descripcion) VALUES (?, ?)";
+
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+            statement.setInt(1, tipoPlato.getTipoPlatoId());
+            statement.setString(2, tipoPlato.getDescripcion());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static List<TipoPlato> getAllTipoPlatos() {
+        Connection con = connection.getConnection();
+        List<TipoPlato> tipos = new ArrayList<>();
+        String sql = "SELECT * FROM tipo_plato";
+
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                TipoPlato tipo = new TipoPlato(
+                    rs.getInt("tipo_plato_id"),
+                    rs.getString("descripcion")
+                );
+                tipos.add(tipo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tipos;
+    }
+
+    public String getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
     }
 }
