@@ -1,5 +1,5 @@
 // Botón que escribe en la consola
-document.getElementById('btnHola').addEventListener('click', function () {
+document.getElementById('saludo').addEventListener('click', function () {
   console.log('Hola Mundo desde JavaScript');
   alert('Revisa la consola: presiona f12');
 });
